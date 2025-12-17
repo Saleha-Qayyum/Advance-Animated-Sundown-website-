@@ -18,7 +18,7 @@ A frontend clone of the Sundown Studio website built using HTML, CSS, and JavaSc
 - Fullscreen mobile menu
 
 ## 📸 Preview
-![Uploading sundown.jpg…]()
+![sundown](https://github.com/user-attachments/assets/ad613a27-3c9f-467b-ae1b-17ee6c22d246)
 
 ![sundown3](https://github.com/user-attachments/assets/a229762e-3beb-465b-942a-6c4cfcbd4446)
 
