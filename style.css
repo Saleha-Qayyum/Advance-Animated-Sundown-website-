@@ -1,0 +1,846 @@
+@font-face{
+    font-family: neuhass;
+    src: url(./NeueHaasDisplayMediu.ttf);
+}
+@font-face{
+    font-family: neuhass;
+    font-weight: 100;
+    src: url(./NeueHaasDisplayXThin.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+.loader{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    transition: all ease 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.loader h1{
+    font-size: 6vw;
+    color: transparent;
+    background: linear-gradient(to right ,orange ,orangered);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+     animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+.loader h1:nth-child(2){
+    animation-delay: 2s;
+}
+.loader h1:nth-child(3){
+    animation-delay: 3s;
+}
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+     90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+#main{
+    
+    position: relative;
+    z-index: 10;
+}
+#page1{
+   min-height: 100vh;
+    width: 100%;
+    padding: 0 3vw ;
+    background-color: rgb(252, 252, 205);
+     position: relative;
+}
+nav{
+    position: relative;
+   z-index: 100;
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.menu{
+    display: none;
+}
+
+.nav2{
+   display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+.nav2 h4{
+    padding: 10px;
+    border: 1px solid rgba(143, 134, 134, 0.884);
+    border-radius: 50px;
+    color: rgba(90, 81, 81, 0.685);
+      transition: all ease 0.3s;
+    font-weight: 50px;
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav2 h4::after{
+      content: "";
+      position: absolute;
+    height: 100%;
+    width: 100%;
+  
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 20px;
+    transition: all ease 0.3s;
+
+}
+.nav2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+    border-color: transparent;
+}
+
+.nav2 h4 a{
+    color: rgba(90, 81, 81, 0.685);
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+ 
+}
+.nav2 h4:hover a{
+    color: beige !important;
+    
+}
+.page1center{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 5vw;
+}
+.left h3 {
+ font-size: 2vw;
+ width: 30vw;
+ line-height:2vw ;
+}
+.right h1{
+    font-size:9vw;
+    line-height: 8vw;
+    
+}
+.right{
+    z-index: 3;
+}
+.herosection{
+    position: absolute;
+    width: 42vw;
+    height: 36vw;
+    right: 0;
+    top: 62vh;
+    
+}
+.hero1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     background: linear-gradient( to top, orangered,rgb(255, 145, 0)) ;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(25px); 
+}
+.hero2{
+   position: absolute;
+    width: 30vw;
+    height: 30vw;
+     background: linear-gradient( to top, orangered,rgb(255, 145, 0)) ;
+   border-radius: 50%;
+    filter: blur(25px);
+     animation-name: anime2;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+.hero3{
+    width: 30vw;
+    height: 30vw;
+     position: absolute;
+     background: linear-gradient( to top, orangered,rgb(255, 145, 0)) ;
+   border-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(25px);
+    animation-name: anime1;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+@keyframes anime1 {
+    from {
+        transform: translate(50%,-5%);
+    }
+    to {
+        transform: translate(0%,10%);
+    }
+}
+@keyframes anime2 {
+    from {
+        transform: translate(5%,-5%);
+    }
+    to {
+        transform: translate(-20%,30%);
+    }
+}
+
+#page1 video{
+    position: relative;
+    width: 100%;
+    margin-top: 4vw;
+    border-radius: 25px;
+}
+#page2{
+   min-height: 100vh;
+    width: 100%;
+  background-color: rgb(252, 252, 205);
+  padding: 4vw 0;
+    position: relative;
+}
+#movingtext{
+    
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+    
+
+.move{
+    
+    white-space: nowrap;
+   display: inline-block;
+    animation-name: move;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+#movingtext h1{
+    font-size: 7vw;
+    display: inline-block;
+   
+
+}
+#movingtext::-webkit-scrollbar{
+display: none;
+} 
+.gola{
+     height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: orangered;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+@keyframes move{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.pg2bottom{
+height: 80vh;
+width: 100%;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding:  4.4vw;
+position: relative;
+z-index: 2;
+}
+.pg2bottom h1{
+    font-size: 4vw;
+    width: 69%;
+    line-height: 4vw;
+}
+.bottom2{
+    width: 44%;
+}
+.bottom2 img{
+    width: 100%;
+    border-radius: 14px;
+}
+.bottom2 p{
+    font-weight: 100;
+}
+.goey{
+    height: 30vw;
+    width: 30vw;
+    background-color: orangered;
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    left: 25%;
+    filter: blur(23px);
+     background: linear-gradient( to top, orangered,rgb(255, 145, 0)) ;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    animation-name: goey;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes goey {
+    from {
+        transform: translate(10%,-10%) skew(0);
+    }
+    to {
+        transform: translate(-10%,10%) skew(-11deg);
+    }
+}
+.fixed{
+    height: 30vw;
+    width: 23vw;
+    background-color: orangered;
+    position: fixed;
+    z-index: 99;
+    left: 57%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+.page3{
+    min-height: 100vh;
+    width: 100%;
+   background-color: rgb(252, 252, 205);
+   padding: 4vw 0;
+    
+}
+
+.element{
+    height: 150px;
+    width: 100%;
+   border-bottom: 1px solid gray;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    justify-content: space-between;
+    overflow: hidden;
+
+}
+.element h2{
+    font-size: 2.9vw;
+     z-index: 3;    
+}
+.element .overly{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: orange;
+    top: -100%;
+    left: 0;
+    transition: all ease 0.3s;
+
+}
+.element:hover .overly{
+    top: 0;
+
+}
+.minielement{
+    text-align: right;}
+#page5{
+height: 70vh;
+width: 100%;
+padding: 4vw 0.3vw;
+ background-color: rgb(252, 252, 205);
+
+}
+.swiper {
+      width: 100%;
+      height: 90%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 22px;
+     border-left: 1px solid gray;
+      
+      align-items: center;
+    }
+      .swiper-slide p{
+        text-align: start;
+        width: 60%;
+        font-size: 1.2vw;
+        padding-left: 1.5vw;
+      }
+
+    .swiper-slide img {
+        display: block;
+      margin-bottom: 1vw;
+      width: 45%;
+      height: 45%;
+      object-fit: contain;
+     margin-left: 20px;
+    }
+
+    .swiper-slide {
+      width: 30%;
+      object-position: start;
+    }
+#page6{
+height: 100vh;
+width: 100%;
+}
+#footer{
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    padding: 1vw 3vw;
+    /* align-items: flex-end; */
+    flex-direction:column ;
+
+    justify-content: flex-end}
+#footer h1{
+    font-size: 17.5vw;
+}
+#footer-div{
+    height: 30vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#footer-div h2{
+    font-size: 2vw;
+    padding: 5px;
+}
+#footer-bottom{
+ border-top: 1px solid rgba(245, 222, 179, 0.856);
+ height: 10vh;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ padding-top: 1vw;
+}
+.f2{
+   
+     width: 30%;
+    
+}
+.f2 h5{
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+   
+}
+.f2 h6{
+    font-size: 1.3vw;
+    color: gray;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid rgba(245, 222, 179, 0.788);
+}
+.fgoey1{
+    height: 40vw;
+    width: 60vw;
+    background-color: red;
+    position: absolute;
+    border-radius: 0%;
+    top: -8%;
+    left: 0%;
+    filter: blur(23px);
+     background: linear-gradient( to top, red,rgb(241, 93, 48)) ;
+   
+    border-bottom-right-radius: 50%;
+    animation-name: goey1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+@keyframes goey1 {
+    from {
+        transform: translate(-1%,0%) skew(0);
+    }
+    to {
+        transform: translate(1%,-30%) skew(0deg);
+    }
+}
+.fgoey2{
+    height: 40vw;
+    width: 59vw;
+    background-color: red;
+    position: absolute;
+    border-radius: 0%;
+    top: -8%;
+    left: 47%;
+    filter: blur(23px);
+     background: linear-gradient( to top, red,rgb(241, 93, 48)) ;
+   
+    border-bottom-left-radius: 50%;
+    animation-name: goey2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+@keyframes goey2 {
+    from {
+        transform: translate(-10%,0%) skew(0);
+    }
+    to {
+        transform: translate(10%,-40%) skew(-11deg);
+    }
+}
+
+.fullscrn {
+    height: 100vh;
+    width: 100%;
+    background-color: #00000070;
+    position: fixed;
+    z-index: 99;
+    top: -100%;
+    transition: all ease 0.5s;
+}
+#full-div1{
+    height: 50%;
+    width: 100%;
+    background-color: rgb(252, 252, 205);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 9vw;
+    font-size: 9vw;
+}
+/* RESPONSIVENESS */
+@media (max-width:550px) {
+    #page1{
+   min-height: 100vh;
+    width: 100%;
+    padding: 0 3vw ;
+    background-color: rgb(252, 252, 205);
+     position: relative;
+}
+nav{
+    padding: 2vw 0vw;
+   background-color: rgb(252, 252, 205);
+
+}
+nav img{
+    height: 9vh;
+    transition: all ease 0.3s;
+}
+.menu{
+    display: block;
+    padding: 2vw 8vw;
+    border: 1px solid gray;
+    border-radius: 50px;
+    font-size: 4vw
+
+}
+
+.nav2{
+   display: none;
+  
+   
+}
+.page1center{
+    width: 100%;
+    height: 67vh;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 5vw;
+    padding: 11vw 5vw;
+}
+.left h3 {
+ font-size: 7vw;
+ width: 80%;
+ line-height:5vw ;
+}
+.right h1{
+    font-size:15vw;
+    line-height: 14vw;
+    
+}
+.herosection{
+    position: absolute;
+    width: 42vw;
+    height: 76vw;
+    right: 0;
+    top: 62vh;
+    
+}
+
+#page1 video{
+    position: relative;
+    width: 90%;
+    height:70vh ;
+    margin-top: 4vw;
+    margin-left: 6%;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+}
+     
+   .gola{
+     height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: orangered;
+    display: inline-block;
+    margin: -.5vw 2vw;
+}  
+.pg2bottom{
+height: 80vh;
+width: 100%;
+
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+align-items: flex-start;
+padding: 11vw 7vw;
+position: relative;
+z-index: 2;
+}
+.pg2bottom h1{
+    font-size: 9vw;
+    width: 109%;
+    line-height: 8vw;
+}
+.bottom2{
+    margin-top: 9vw;
+    width: 74%;
+}
+.bottom2 img{
+    width: 100%;
+    border-radius: 14px;
+}
+.bottom2 p{
+    font-weight: 100;
+}
+.goey{
+    height: 60vw;
+    width: 50vw;
+    background-color: orangered;
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    left: 25%;
+    filter: blur(23px);
+     background: linear-gradient( to top, orangered,rgb(255, 145, 0)) ;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    animation-name: goey;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#page5{
+height: 50vh;
+width: 100%;
+
+ background-color: rgb(252, 252, 205);
+
+}
+.swiper {
+      width: 90%;
+      height: 70%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 22px;
+     border-left: 1px solid gray;
+      
+      align-items: center;
+    }
+      .swiper-slide p{
+        text-align: start;
+        width: 100%;
+        font-size: 1.2vw;
+        padding-left: 1.5vw;
+      }
+
+    .swiper-slide img {
+        display: block;
+      margin-bottom: 1vw;
+      width: 85%;
+      height: 45%;
+      object-fit: contain;
+     margin-left: 20px;
+    }
+
+    .swiper-slide {
+      width: 50%;
+    }
+     
+     #page6{
+height: 100vh;
+width: 100%;
+}
+#footer{
+    position: fixed;
+    z-index: 1;
+    height: 90vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    padding: 1vw 3vw;
+    /* align-items: flex-end; */
+    flex-direction:column ;
+
+    justify-content: flex-end}
+#footer h1{
+    font-size: 15.5vw;
+    text-align: center;
+}
+#footer-div{
+    height: 30vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#footer-div h2{
+    font-size: 5vw;
+    padding: 5px;
+}
+#footer-bottom{
+ border-top: 1px solid rgba(245, 222, 179, 0.856);
+ height: 10vh;
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ padding-top: 1vw;
+}
+.f2{
+   
+     width: 50%;
+    
+}
+.f2 h5{
+    font-size: 3.3vw;
+    margin-bottom: 3vw;
+   
+}
+.f2 h6{
+    font-size: 2.7vw;
+    color: gray;
+    padding-bottom: 2vw;
+    border-bottom: 1px solid rgba(245, 222, 179, 0.788);
+}
+.fgoey1{
+    height: 80vh;
+    width: 80vw;
+    background-color: red;
+    position: absolute;
+    border-radius: 0%;
+    top: -8%;
+    left: 0%;
+    filter: blur(23px);
+     background: linear-gradient( to top, red,rgb(241, 93, 48)) ;
+   
+    border-bottom-right-radius: 50%;
+    animation-name: goey1;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+@keyframes goey1 {
+    from {
+        transform: translate(-1%,0%) skew(0);
+    }
+    to {
+        transform: translate(1%,-30%) skew(0deg);
+    }
+}
+.fgoey2{
+    height: 80vh;
+    width: 89vw;
+    background-color: red;
+    position: absolute;
+    border-radius: 0%;
+    top: -8%;
+    left: 47%;
+    filter: blur(23px);
+     background: linear-gradient( to top, red,rgb(241, 93, 48)) ;
+   
+    border-bottom-left-radius: 50%;
+    animation-name: goey2;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+@keyframes goey2 {
+    from {
+        transform: translate(-10%,0%) skew(0);
+    }
+    to {
+        transform: translate(10%,-40%) skew(-11deg);
+    }
+}
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+}
